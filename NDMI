@@ -1,0 +1,189 @@
+    var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(nakusp)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI1 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+    Map.addLayer(NDVI1, {min: 0, max: 1}, "NDVI LSAT");
+   var NDMI = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+    Map.addLayer(NDMI, {min: 0, max: 1}, "NDMI LSAT");
+
+  var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(cranbrook)
+    .sort("CLOUD_COVER")
+    .first());
+
+    var NDVI2 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+          BLUE: image.select("SR_B2")    // BLUE
+        });
+
+    Map.addLayer(NDVI2, {min: 0, max: 1}, "NDVI LSAT2");
+    var NDMI2 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+
+    Map.addLayer(NDMI2, {min: 0, max: 1}, "NDMI2 LSAT");
+
+  var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(hotspring)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI3 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+
+    Map.addLayer(NDVI3, {min: 0, max: 1}, "NDVI3 LSAT");
+    var NDMI3 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+
+    Map.addLayer(NDMI3, {min: 0, max: 1}, "NDMI3 LSAT");
+  var image = ee.Image(lsat8
+    .filterDate("2014-08-01", "2019-10-30")
+    .filterBounds(grasmere)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI4 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+
+    Map.addLayer(NDVI4, {min: 0, max: 1}, "NDVI LSAT4");
+    var NDMI4 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+
+    Map.addLayer(NDMI4, {min: 0, max: 1}, "NDMI4 LSAT");
+    var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(Pheonix)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI5 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+
+    Map.addLayer(NDVI5, {min: 0, max: 1}, "NDVI5 LSAT");
+   var NDMI5 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+    Map.addLayer(NDMI5, {min: 0, max: 1}, "NDMI5 LSAT");
+    var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(donald)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI6 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+
+    Map.addLayer(NDVI6, {min: 0, max: 1}, "NDVI6 LSAT");
+   var NDMI6 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+    Map.addLayer(NDMI6, {min: 0, max: 1}, "NDMI6 LSAT");
+
+    var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(mica)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI7 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+
+    Map.addLayer(NDVI7, {min: 0, max: 1}, "NDVI7 LSAT");
+   var NDMI7 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+    Map.addLayer(NDMI7, {min: 0, max: 1}, "NDMI7 LSAT");
+    var image = ee.Image(lsat8
+    .filterDate("2017-08-01", "2017-08-30")
+    .filterBounds(eight)
+    .sort("CLOUD_COVER")
+    .first());
+    var NDVI8 = image.expression(
+        "(NIR - RED) / (NIR + RED)",
+        {
+          RED: image.select("SR_B4"),    //  RED
+          NIR: image.select("SR_B5"),    // NIR
+        });
+
+    Map.addLayer(NDVI8, {min: 0, max: 1}, "NDVI8 LSAT");
+   var NDMI8 = image.expression(
+        "(NIR - (SWIR1-SWIR2)) / (NIR + (SWIR1 - SWIR2))",
+        {
+          SWIR1: image.select("SR_B6"),    //  SWIR1
+          NIR: image.select("SR_B5"),    // NIR
+          SWIR2: image.select("SR_B7")    // SWIR2
+        });
+    Map.addLayer(NDMI8, {min: 0, max: 1}, "NDMI8 LSAT");
+
+var combined_img = ee.ImageCollection([NDVI1, NDVI2, NDVI3, NDVI4, NDVI5, NDVI6, NDVI7, NDVI8]).mosaic();
+Map.addLayer(combined_img);
+
+var combined_img2 = ee.ImageCollection([NDMI, NDMI2, NDMI3, NDMI4, NDMI5, NDMI6, NDMI7, NDMI8]).mosaic();
+Map.addLayer(combined_img2, {min: 0, max: 1}),
+
+Export.image.toDrive({
+  image: combined_img2,
+  description: 'NDMI',
+  scale: 30,
+  region: extent,
+  maxPixels: 1e10
+})
